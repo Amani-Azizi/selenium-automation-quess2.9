@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2025-05-26T12:56:20.667966" rpa="false" schemaversion="5">
+<suite id="s1" name="Automatisation-Quess2.9" source="c:\Users\TestITDev\quess-automation\quess-automation\automatisation-quess2.9.robot">
+<test id="s1-t1" name="Mon test de connexion" line="10">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-26T12:56:20.884788" level="INFO">Opening browser 'chrome' to base url 'https://quess360.bcepharma.com/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-26T12:56:20.884788" elapsed="3.709281"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-26T12:56:24.596085" elapsed="0.051550"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-26T12:56:24.648658" level="INFO">Typing text 'admin.itdev' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-26T12:56:24.647635" elapsed="0.213077"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-26T12:56:24.862603" level="INFO">Typing text 'Bce!!2025' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-26T12:56:24.862603" elapsed="0.114708"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-26T12:56:24.977311" level="INFO">Clicking button 'xpath=//*[@id="main"]/div/form/div[3]/button'.</msg>
+<arg>xpath=//*[@id="main"]/div/form/div[3]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-26T12:56:24.977311" elapsed="0.088227"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="main"]/div/ul/li[1]/div</arg>
+<arg>6s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-26T12:56:25.065538" elapsed="5.088307"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-26T12:56:30.160628" level="INFO">Clicking element 'xpath=//*[@id="sessionModifier"]/table/tbody/tr[3]/td[2]/div/button'.</msg>
+<arg>xpath=//*[@id="sessionModifier"]/table/tbody/tr[3]/td[2]/div/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-26T12:56:30.160628" elapsed="0.062266"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-26T12:56:30.222894" level="INFO">Clicking element 'xpath=//ul[contains(@class,'multiselect-container')]//label[contains(., "ATP ONCO")]/input'.</msg>
+<arg>xpath=//ul[contains(@class,'multiselect-container')]//label[contains(., "${option}")]/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-26T12:56:30.222894" elapsed="0.085892"/>
+</kw>
+<var name="${option}">ATP ONCO</var>
+<status status="PASS" start="2025-05-26T12:56:30.222894" elapsed="0.086872"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-26T12:56:30.309766" level="INFO">Clicking element 'xpath=//ul[contains(@class,'multiselect-container')]//label[contains(., "ATP SCAS")]/input'.</msg>
+<arg>xpath=//ul[contains(@class,'multiselect-container')]//label[contains(., "${option}")]/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-26T12:56:30.309766" elapsed="0.060322"/>
+</kw>
+<var name="${option}">ATP SCAS</var>
+<status status="PASS" start="2025-05-26T12:56:30.309766" elapsed="0.060809"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-26T12:56:30.371174" level="INFO">Clicking element 'xpath=//ul[contains(@class,'multiselect-container')]//label[contains(., "Sans Role")]/input'.</msg>
+<arg>xpath=//ul[contains(@class,'multiselect-container')]//label[contains(., "${option}")]/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-26T12:56:30.370575" elapsed="0.055248"/>
+</kw>
+<var name="${option}">Sans Role</var>
+<status status="PASS" start="2025-05-26T12:56:30.370575" elapsed="0.055248"/>
+</iter>
+<var>${option}</var>
+<value>@{Options}</value>
+<status status="PASS" start="2025-05-26T12:56:30.222894" elapsed="0.203248"/>
+</for>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-26T12:56:32.426535" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-26T12:56:30.426142" elapsed="2.000393"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-26T12:56:32.426535" level="INFO">Clicking element 'xpath=//*[@id="header"]'.</msg>
+<arg>xpath=//*[@id="header"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-26T12:56:32.426535" elapsed="0.804602"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-26T12:56:36.232315" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-26T12:56:33.231137" elapsed="3.001178"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="main"]/div/ul/li[1]/div</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-26T12:56:36.233875" elapsed="0.040174"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-26T12:56:39.275941" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-26T12:56:36.275515" elapsed="3.000426"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-26T12:56:39.277964" elapsed="2.348988"/>
+</kw>
+<status status="PASS" start="2025-05-26T12:56:20.884788" elapsed="20.742885"/>
+</test>
+<status status="PASS" start="2025-05-26T12:56:20.672510" elapsed="20.955163"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Automatisation-Quess2.9">Automatisation-Quess2.9</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
