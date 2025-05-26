@@ -11,7 +11,7 @@ Mon test de connexion
     Open Browser    ${URL}    chrome
     Maximize Browser Window 
     Input Text     id=username    ${USER}
-    Input Text     id=password    ${PASS}
+    Input Text     id=password    ${PASS} 
     Click Button   xpath=//*[@id="main"]/div/form/div[3]/button
     Wait Until Element Is Visible    xpath=//*[@id="main"]/div/ul/li[1]/div    6s
     #Sélectionner Plusieurs Options Dans Dropdown
