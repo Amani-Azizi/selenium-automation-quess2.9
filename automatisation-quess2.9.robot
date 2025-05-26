@@ -1,6 +1,17 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    Collections
+Library    builtIn 
+Library    String
+Library    OperatingSystem
 
+*** Keywords ***
+Remplir Les Champs Avec Nombres Aléatoires
+    [Arguments]    @{xpaths}
+    FOR    ${xpath}    IN    @{xpaths}
+        ${nombre}=    Evaluate    __import__('random').randint(-25, 10)
+        Input Text    xpath=${xpath}    ${nombre}
+    END
 *** Variables ***
 ${URL}    https://quess360.bcepharma.com/
 ${USER}   admin.itdev
@@ -28,7 +39,26 @@ Mon test de connexion
     Sleep    3s
    # Vérification finale (exemple: attendre un élément visible après fermeture)
     Wait Until Element Is Visible    xpath=//*[@id="main"]/div/ul/li[1]/div
-    Sleep    3s
+
+    Click Element    xpath=//*[@id="main"]/div/ul/li[1]/div
+    Wait Until Element Is Visible    xpath=//*[@id="header-logo"]
+    Sleep    2s
+    Click Element    xpath=//*[@id="main"]/div/ul/li[58]/div/span[2]
+    Wait Until Element Is Visible    XPath=//*[@id="main"]/form/div[1]/div[2]/h3
+    Sleep    2s
+     ${champs}=    Create List
+    ...    //*[@id="main"]/form/div[1]/div[2]/div[2]/div/div[4]/div/input[1]
+    ...    //*[@id="main"]/form/div[1]/div[2]/div[3]/div/div[4]/div/input[1]
+    ...    //*[@id="main"]/form/div[1]/div[3]/div[2]/div/div[4]/div/input[1]
+    ...    //*[@id="main"]/form/div[1]/div[3]/div[3]/div/div[4]/div/input[1]
+    ...    //*[@id="main"]/form/div[1]/div[3]/div[4]/div/div[4]/div/input[1]
+    ...    
+
+    Sleep    2s
+
+
+
+
     Close Browser
 
 
